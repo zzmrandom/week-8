@@ -67,8 +67,8 @@ function displayForecast() {
     forecastHtml =
       forecastHtml +
       `
-<div class="weather-forecast">
-<div class="row">
+<div class="weather-forecast"></div>
+<div class="row"></div>
           <div class="col-2 day-column">
             <div class="day">${day}</div>
             <div class="weather-icon">
