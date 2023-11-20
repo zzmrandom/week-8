@@ -77,6 +77,7 @@ function displayForecast() {
               <span class="weather-description-max">18°</span> 
               <span class="weather-description-min">12°</span></div>
           </div>
+          </div>
           `;
   });
   forecastElemnt.innerHTML = forecastHtml;
