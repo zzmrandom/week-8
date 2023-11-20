@@ -96,13 +96,12 @@ main {
   margin-left: 50px;
 }
 .day {
-  color: #885df1;
+  color: rgba(39, 33, 66, 0.4);
 }
 .day-column {
-  text-align: center;
-  color: 
   font: size 16px;
 }
+
 .weather-icon {
   font-size: 24px;
   color: black;
