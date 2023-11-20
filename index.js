@@ -61,8 +61,12 @@ function displayForecast() {
   let forecast = document.querySelector("#forecast");
 
   let days = ["Mon", "Tues", "Weds", "Thurs", "Fri"];
+  let forecastHtml = "";
+
   days.forEach(function (day) {
-    forecast.innerHTML = `
+    forecastHtml =
+      forecastHtml +
+      `
 <div class="row">
           <div class="col-2 day-column">
             <div class="day">${day}</div>
@@ -75,6 +79,7 @@ function displayForecast() {
           </div>
           `;
   });
+  forecastElemnt.innerHTML = forecastHtml;
 }
 
 let searchFormElement = document.querySelector("#search-form");
