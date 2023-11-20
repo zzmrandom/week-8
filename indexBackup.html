@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="scr/style.css" />
+    <script
+      src="https://kit.fontawesome.com/af85ef94d7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+<style>
+      body {
+  background-color: hsl(234, 63%, 44%);
+}
+
+.weather-app {
+  background-color: #eb9788;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08px);
+}
+
+header {
+  border-bottom: 1px solid #b7472a;
+  padding: 0 0 30px 0;
+}
+a {
+  color: #885df1;
+}
+.search-form-input {
+  background-color: #f9f7fe;
+  border: none;
+  border-radius: 6px;
+  width: 57%;
+  padding: 15px 18px;
+  font-size: 16px;
+}
+
+.search-form-button {
+  background-color: #ffd5ab;
+  padding: 15px 28px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  margin-left: 5px;
+  font-size: 16px;
+}
+
+.current-location-button {
+  background-color: #ffd5ab;
+  padding: 15px 28px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  margin-left: 5px;
+  font-size: 16px;
+}
+
+main {
+  padding: 30px 0;
+}
+
+.weather-app-data {
+  display: flex;
+  justify-content: space-between;
+}
+.weather-app-city {
+  margin: 0;
+  font-size: 38px;
+  line-height: 48px;
+}
+.weather-app-details {
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(39, 33, 66, 0.4);
+  font-weight: 500;
+}
+
+.weather-app-details strong {
+  color: #f65282;
+}
+
+.weather-app-temp-container {
+  display: flex;
+}
+
+.weather-app-icon {
+  width: 88px;
+  height: 88px;
+}
+
+.weather-app-temp-value {
+  font-size: 88px;
+  font-weight: bold;
+  margin: left 10px;
+}
+
+.weather-app-unit {
+  margin-top: 16px;
+  font-size: 28px;
+}
+
+.weather-forecast {
+  text-align: center;
+  margin-left: 50px;
+}
+.day {
+  color: black;
+}
+.day-column {
+  font: size 16px;
+}
+.weather-description {
+  color: black;
+}
+.weather-description-min {
+  opacity: 0.5;
+}
+.weather-icon {
+  font-size: 24px;
+  color: black;
+}
+
+footer {
+  padding: 30px 0 0 0;
+  text-align: center;
+  font-size: 13.5px;
+  color: rgba(0, 0, 0, 0.6);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+</style>
+  <body>
+    <div class="weather-app">
+      <header>
+        <form class="search-form" id="search-form">
+          <input
+            type="search"
+            placeholder="Enter a city.."
+            required
+            id="search-form-input"
+            class="search-form-input"
+          />
+          <input type="submit" value="Search" class="search-form-button" />
+          <input type="button" value="Current" class="current-location-button"/>
+        </form>
+      </header>
+      <main>
+        <div class="weather-app-data">
+          <div>
+            <h1 class="weather-app-city" id="city"></h1>
+            <p class="weather-app-details">
+             <span id="time"></span> <span id="description">scattered rain</span>
+              <br />
+              Humidity: <strong id="humidity"></strong>, Wind: <strong id="wind-Speed"></strong>
+            </p>
+          </div>
+          <div class="weather-app-temp-container">
+            <div id="icon">
+            </div>
+          <div class="weather-app-temp-value" id="temp"></div> 
+          <div class="weather-app-unit"> °C </div>
+      </main>
+      <div class="weather-forecast">
+<div class="row">
+          <div class="col-2 day-column">
+            <div class="day">Mon</div>
+            <div class="weather-icon">
+              <i class="fa-solid fa-sun"></i>
+            </div>
+            <div class="weather-description">
+              <span class="weather-description-max">18°</span> 
+              <span class="weather-description-min">12°</span></div>
+          </div>
+          <div class="col-2 day-column">
+            <div class="day">Tues</div>
+            <div class="weather-icon">
+              <i class="fa-solid fa-cloud-showers-heavy"></i>
+            </div>
+            <div class="weather-description">
+              <span class="weather-description-max">10°</span> 
+              <span class="weather-description-min">5°</span></div>
+          </div>
+          <div class="col-2 day-column">
+            <div class="day">Weds</div>
+            <div class="weather-icon">
+              <i class="fa-solid fa-cloud-showers-heavy"></i>
+            </div>
+            <div class="weather-description">
+              <span class="weather-description-max">15°</span> 
+              <span class="weather-description-min">11°</span></div>
+          </div>
+          <div class="col-2 day-column">
+            <div class="day">Thurs</div>
+            <div class="weather-icon">
+              <i class="fa-solid fa-sun"></i>
+            </div>
+            <div class="weather-description">
+              <span class="weather-description-max">7°</span> 
+              <span class="weather-description-min">5°</span></div>
+          </div>
+          <div class="col-2 day-column">
+            <div class="day">Fri</div>
+            <div class="weather-icon">
+              <i class="fa-solid fa-cloud-showers-heavy"></i>
+            </div>
+            <div class="weather-description">
+              <span class="weather-description-max">13°</span> 
+              <span class="weather-description-min"> 8°</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+ </div>
+      <footer>
+        Built by
+        <a href="https://github.com/zzmrandom" target="_blank">Zacjulia M </a>
+        is open-sourced on
+        <a href="https://github.com/zzmrandom/week-8" target="_blank">
+          GitHub</a
+        >
+        and hosted on
+        <a href="https://remarkable-pithivier-8d39d1.netlify.app/" target="_blank">
+          Netlify
+        </a>
+      </footer>
+    </div>
+    <script>
+        function refreshWeather(response) {
+  let tempElement = document.querySelector("#temp");
+  let temp = response.data.temperature.current;
+  let cityElement = document.querySelector("#city");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windSpeedElement = document.querySelector("#wind-Speed");
+  let timeElement = document.querySelector("#time");
+  let date = new Date(response.data.time * 1000);
+  let iconElement = document.querySelector("#icon");
+
+  cityElement.innerHTML = response.data.city;
+  timeElement.innerHTML = formatDate(date);
+  descriptionElement.innerHTML = response.data.condition.description;
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+  windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
+  tempElement.innerHTML = Math.round(temp);
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
+}
+function formatDate(date) {
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${day} ${hours}:${minutes},`;
+}
+
+function searchCity(city) {
+  let apiKey = "dffcdc392abt6650ob84a0bfdbddfd86";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(refreshWeather);
+}
+
+function handleSearchSubmit(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-form-input");
+
+  searchCity(searchInput.value);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(function (position) {
+    searchLocation(position);
+  });
+}
+
+let searchFormElement = document.querySelector("#search-form");
+searchFormElement.addEventListener("submit", handleSearchSubmit);
+//f9f7fe background color
+searchCity("London");
+
+    </script>
+  </body>
+</html>

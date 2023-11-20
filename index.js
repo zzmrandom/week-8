@@ -61,3 +61,17 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 //f9f7fe background color
 searchCity("London");
+
+let forecast = document.querySelector("#forecast");
+forecast.innerHTML = `
+<div class="row">
+          <div class="col-2 day-column">
+            <div class="day">Mon</div>
+            <div class="weather-icon">
+              <i class="fa-solid fa-sun"></i>
+            </div>
+            <div class="weather-description">
+              <span class="weather-description-max">18°</span> 
+              <span class="weather-description-min">12°</span></div>
+          </div>
+          `;
