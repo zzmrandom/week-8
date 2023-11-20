@@ -96,7 +96,7 @@ main {
   margin-left: 50px;
 }
 .day {
-  color: rgba(39, 33, 66, 0.4);
+  color: rgba(39, 34, 61, 0.4);
 }
 .day-column {
   font: size 16px;
@@ -104,7 +104,9 @@ main {
 .weather-description {
   color: rgba(39, 33, 66, 0.4);
 }
-
+.weather-description-min {
+  opacity: 0.6;
+}
 .weather-icon {
   font-size: 24px;
   color: black;
