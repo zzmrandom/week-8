@@ -105,7 +105,7 @@ main {
   color: black;
 }
 .weather-description-min {
-  opacity: 0.6;
+  opacity: 0.4;
 }
 .weather-icon {
   font-size: 24px;
