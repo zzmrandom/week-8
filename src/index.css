@@ -101,6 +101,9 @@ main {
 .day-column {
   font: size 16px;
 }
+.weather-description {
+  color: rgba(39, 33, 66, 0.4);
+}
 
 .weather-icon {
   font-size: 24px;
