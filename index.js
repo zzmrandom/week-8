@@ -57,16 +57,15 @@ function getCurrentLocation(event) {
   });
 }
 
-let searchFormElement = document.querySelector("#search-form");
-searchFormElement.addEventListener("submit", handleSearchSubmit);
-//f9f7fe background color
-searchCity("London");
+function displayForecast() {
+  let forecast = document.querySelector("#forecast");
 
-let forecast = document.querySelector("#forecast");
-forecast.innerHTML = `
+  let days = ["Mon", "Tues", "Weds", "Thurs", "Fri"];
+  days.forEach(function (day) {
+    forecast.innerHTML = `
 <div class="row">
           <div class="col-2 day-column">
-            <div class="day">Mon</div>
+            <div class="day">${day}</div>
             <div class="weather-icon">
               <i class="fa-solid fa-sun"></i>
             </div>
@@ -75,3 +74,11 @@ forecast.innerHTML = `
               <span class="weather-description-min">12°</span></div>
           </div>
           `;
+  });
+}
+
+let searchFormElement = document.querySelector("#search-form");
+searchFormElement.addEventListener("submit", handleSearchSubmit);
+//f9f7fe background color
+searchCity("London");
+displayForecast();
