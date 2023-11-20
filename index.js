@@ -81,4 +81,3 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 //f9f7fe background color
 searchCity("London");
-displayForecast();
