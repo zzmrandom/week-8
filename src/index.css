@@ -96,13 +96,13 @@ main {
   margin-left: 50px;
 }
 .day {
-  color: rgba(28, 27, 31, 0.4);
+  color: black;
 }
 .day-column {
   font: size 16px;
 }
 .weather-description {
-  color: rgba(39, 33, 66, 0.4);
+  color: black;
 }
 .weather-description-min {
   opacity: 0.6;
