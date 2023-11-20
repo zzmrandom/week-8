@@ -90,6 +90,12 @@ main {
   margin-top: 16px;
   font-size: 28px;
 }
+
+.weather-forecast {
+  margin: 20px;
+  text-align: center;
+}
+
 .day-column {
   text-align: center;
   color: rgba(39, 33, 66, 0.4);
