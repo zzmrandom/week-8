@@ -78,6 +78,8 @@ function displayForecast() {
               <span class="weather-description-min">12°</span></div>
           </div>
           </div>
+          </div>
+          </div>
           `;
   });
   forecastElemnt.innerHTML = forecastHtml;
