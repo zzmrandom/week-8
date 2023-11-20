@@ -68,7 +68,7 @@ function displayForecast() {
       forecastHtml +
       `
 <div class="row">
-          <div class="col-2 day-column">
+          <div class="col-2">
             <div class="day">${day}</div>
             <div class="weather-icon">
               <i class="fa-solid fa-sun"></i>
@@ -78,8 +78,7 @@ function displayForecast() {
               <span class="weather-description-min">12°</span></div>
           </div>
           </div>
-          </div>
-          </div>
+          
           `;
   });
   forecastElemnt.innerHTML = forecastHtml;
