@@ -60,7 +60,7 @@ function getCurrentLocation(event) {
 function displayForecast() {
   let forecastElemnt = document.querySelector("#forecast");
 
-  let days = ["Mon", "Tues", "Weds", "Thurs", "Fri", "Sat", "Sun"];
+  let days = ["Mon", "Tues", "Weds", "Thurs", "Fri"];
   let forecastHtml = "";
 
   days.forEach(function (day) {
