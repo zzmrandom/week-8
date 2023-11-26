@@ -60,10 +60,12 @@ function getCurrentLocation(event) {
 function getForecast(city) {
   let apiKey = "dffcdc392abt6650ob84a0bfdbddfd86";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayForecast);
   console.log(apiUrl);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
   let forecastElemnt = document.querySelector("#forecast");
 
   let days = ["Mon", "Tues", "Weds", "Thurs", "Fri"];
@@ -94,4 +96,3 @@ searchFormElement.addEventListener("submit", handleSearchSubmit);
 //f9f7fe background color
 searchCity("London");
 getForecast("London");
-displayForecast();
