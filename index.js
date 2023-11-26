@@ -57,6 +57,12 @@ function getCurrentLocation(event) {
   });
 }
 
+function getForecast(city) {
+  let apiKey = "dffcdc392abt6650ob84a0bfdbddfd86";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  console.log(apiUrl);
+}
+
 function displayForecast() {
   let forecastElemnt = document.querySelector("#forecast");
 
@@ -87,4 +93,5 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 //f9f7fe background color
 searchCity("London");
+getForecast("London");
 displayForecast();
