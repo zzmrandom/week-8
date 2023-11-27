@@ -81,7 +81,7 @@ function displayForecast(response) {
           <div class="col-2 day-column">
             <div class="day">Monday</div>
             <div class="weather-icon"> 
-            img src ="${day.condition.icon_url}"/> 
+            <img src ="${day.condition.icon_url}"/> 
             </div>
             <div class="weather-description">
               <span class="weather-description-max">${Math.round(
