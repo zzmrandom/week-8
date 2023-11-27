@@ -72,10 +72,11 @@ function displayForecast(response) {
 
   let forecastHtml = "";
 
-  response.data.daily.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `
 <div class="weather-forecast"></div>
 <div class="row"></div>
           <div class="col-2 day-column">
@@ -90,6 +91,7 @@ function displayForecast(response) {
               )}°</span></div>
           </div>
           `;
+    }
   });
   forecastElemnt.innerHTML = forecastHtml;
 }
