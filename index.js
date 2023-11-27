@@ -59,6 +59,13 @@ function getCurrentLocation(event) {
   });
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+
 function getForecast(city) {
   let apiKey = "dffcdc392abt6650ob84a0bfdbddfd86";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
@@ -80,7 +87,7 @@ function displayForecast(response) {
 <div class="weather-forecast"></div>
 <div class="row"></div>
           <div class="col-2 day-column">
-            <div class="day">Mon</div>  
+            <div class="day">${formatDay(day.time)}</div>  
             <img src ="${day.condition.icon_url}" class="weather-icon"/> 
             <div class="weather-description">
               <span class="weather-description-max">${Math.round(
