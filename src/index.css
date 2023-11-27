@@ -98,6 +98,7 @@ main {
 }
 .day {
   color: black;
+  text-align: center;
 }
 .day-column {
   font: size 16px;
