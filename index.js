@@ -59,6 +59,15 @@ function getCurrentLocation(event) {
   });
 }
 
+//function getLocation(position) {
+//let lon = position.coords.longitude;
+//let lat = position.coords.latitude;
+//let apiKey = "dffcdc392abt6650ob84a0bfdbddfd86";
+//let cityNameApiUrl = `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=${apiKey}`;
+
+//axios.get(cityNameApiUrl).then(findCity);
+//}
+
 let currentLocationButton = document.querySelector(".current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
@@ -110,4 +119,3 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 //f9f7fe background color
 searchCity("London");
-searchLocation();
